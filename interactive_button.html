@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Button with Image</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #bigButton {
+            background-color: red;
+            color: white;
+            font-size: 2em;
+            padding: 30px 60px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        #bigButton.clicked {
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+    <!-- 在此处插入图片 -->
+    <img src="example.jpg" alt="Example Image" width="300">
+    
+    <!-- 如果使用在线图片，使用如下格式 -->
+    <!-- <img src="https://example.com/path/to/your/image.jpg" alt="Example Image" width="300"> -->
+
+    <button id="bigButton">点击即可存档已吵架生气内容</button>
+
+    <script>
+        const button = document.getElementById("bigButton");
+
+        button.addEventListener("click", () => {
+            button.classList.add("clicked");
+            button.textContent = "恭喜你！已存档 将于2周后释放";
+            button.disabled = true; // 禁用按钮，防止多次点击
+        });
+    </script>
+</body>
+</html>
